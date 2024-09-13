@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kislorod Lounge Bar - Mix of the Day</title>
+  </head>
+  <body>
+    <h1><div class="nameOf">Kislorod Lounge Bar - Mix of the Day</div></h1>
+
+    <div id="canvasContainer">
+      <canvas id="mixCanvas" width="1080" height="1920"></canvas>
+    </div>
+
+    <div class="controls">
+      <div class="input-group">
+        <label for="flavor1">Введите название вкуса 1:</label>
+        <input type="text" id="flavor1" />
+      </div>
+      <div class="input-group">
+        <label for="flavor2">Введите название вкуса 2:</label>
+        <input type="text" id="flavor2" />
+      </div>
+      <div class="input-group">
+        <label for="flavor3">Введите название вкуса 3:</label>
+        <input type="text" id="flavor3" />
+      </div>
+    </div>
+
+    <div class="button-group">
+      <button href="#" id="generateBtn" class="myButton">
+        Сгенерировать микс
+      </button>
+      <button href="#" id="randomMixBtn" class="myButton">
+        Рандомный микс
+      </button>
+      <button href="#" id="downloadBtn" class="myButton cartButton">
+        <img src="images/download.png" alt="" class="icon" />
+      </button>
+      <button id="clearInputsBtn" class="myButton cartButton">
+        <img src="images/clear.png" alt="" class="icon" />
+      </button>
+    </div>
+
+    <!-- Контейнер для иконок вкусов с ползунками -->
+    <div class="flavor-icons">
+      <!-- Пример иконки вкуса с ползунком -->
+      <div class="flavor-icon">
+        <img src="images/flavor-image.webp" alt="flavor name" />
+        <label>Flavor Name</label>
+        <!-- Добавляем переключатель (toggle) для каждого вкуса -->
+        <div class="toggle">
+          <input type="checkbox" />
+        </div>
+      </div>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>

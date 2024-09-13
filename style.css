@@ -1,0 +1,247 @@
+.nameOf {
+  font-family: "Days One";
+}
+
+.controls {
+  display: flex; /* Размещаем инпуты в ряд */
+  justify-content: space-between; /* Равномерное распределение между инпутами */
+  margin-top: 20px;
+}
+
+.myButton {
+  box-shadow: 2px 3px 0px 0px #89320d;
+  background-color: #d45b2b;
+  border-radius: 12px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Georgia, serif;
+  font-size: 17px;
+  padding: 13px 31px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #000000;
+  border: none;
+  width: 220px;
+}
+
+.myButton:hover {
+  background-color: #d45b2b;
+}
+
+.myButton:active {
+  position: relative;
+  top: 1px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column; /* Располагаем метку над инпутом */
+  align-items: center;
+  margin-right: 20px;
+}
+
+.input-group label {
+  margin-bottom: 5px;
+  font-size: 16px;
+  color: #ff8f5f;
+  text-shadow: 1px 1px 2px #f43232;
+}
+
+.input-group input {
+  width: 200px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 12px;
+  background-color: #ffe7dd;
+  color: #231c1c;
+}
+
+.button-group {
+  display: flex; /* Размещаем кнопки в ряд */
+  justify-content: center; /* Центрируем кнопки по горизонтали */
+  gap: 20px; /* Отступы между кнопками */
+  margin-top: 0px;
+  margin-bottom: 10px;
+}
+
+.button-group button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.controls input {
+  display: block; /* Блоковое отображение, чтобы input был под меткой */
+  margin: 0 auto; /* Автоматические отступы слева и справа для центрирования */
+  width: 300px; /* Установим фиксированную ширину для input */
+}
+body {
+  font-family: Arial, sans-serif;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  justify-content: center;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Размещаем фон под всем остальным контентом */
+  background-image: url("images/backgr.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  filter: blur(
+    var(--blur-value, 0px)
+  ); /* Применяем CSS-переменную для размытия */
+  transition: filter 0.3s ease; /* Плавный переход */
+}
+
+#canvasContainer {
+  position: relative;
+  width: 270px; /* Уменьшение ширины в 2 раза */
+  height: 480px; /* Уменьшение высоты в 2 раза */
+}
+
+canvas {
+  width: 100%; /* Ширина 540px для отображения */
+  height: auto; /* Автоматическое изменение высоты для поддержания пропорций */
+}
+
+.controls {
+  margin: 20px;
+  text-align: center;
+}
+
+.controls label,
+.controls input {
+  margin-bottom: 10px;
+  display: block;
+}
+
+.controls button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+}
+.flavor-icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 1400px; /* 14 иконок по 100px каждая плюс отступы */
+  margin-top: 20px;
+}
+
+.flavor-icon {
+  background-color: rgba(56, 52, 52, 0.9);
+  border-radius: 12px;
+  width: 100px; /* Фиксированная ширина для каждой иконки */
+  height: 140px; /* Увеличенная высота для изображения + текст */
+  position: relative; /* Для размещения ползунка внутри контейнера */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 6px;
+}
+.flavor-icons::after {
+  content: "";
+  display: block;
+  width: 100%; /* Забирает всю ширину контейнера */
+  margin-bottom: 50px; /* Отступ после последнего ряда */
+}
+
+.flavor-icon img {
+  width: 80px; /* Ограничим максимальный размер изображения */
+  height: 80px; /* Ограничим максимальный размер изображения */
+  object-fit: contain; /* Сохраняем пропорции изображения */
+  margin-bottom: 5px; /* Отступ между картинкой и текстом */
+}
+
+.flavor-icon label {
+  font-size: 12px; /* Размер текста под иконкой */
+  margin-top: 5px;
+  color: white;
+}
+
+.toggle {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  height: 20px;
+  width: 40px;
+  border-radius: 25px;
+  background-color: #131419;
+  box-shadow: -2px -2px 4px rgba(255, 255, 255, 0.05),
+    2px 2px 4px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Чтобы круг не выходил за границы ползунка */
+  z-index: 1;
+}
+
+.toggle input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  appearance: none; /* Убираем стандартный вид */
+  -webkit-appearance: none; /* Для поддержки в Safari */
+  cursor: pointer;
+}
+
+/* Кружок внутри ползунка */
+.toggle input[type="checkbox"]::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  height: 15px;
+  width: 15px;
+  background: rgb(
+    225,
+    0,
+    0
+  ) !important; /* Красный цвет для выключенного состояния */
+  border-radius: 50%;
+  box-shadow: -8px -4px 8px 0px rgba(255, 255, 255, 0.05),
+    8px 4px 12px 0px rgba(0, 0, 0, 0.5); /* Добавляем тень для круга */
+  transition: left 0.3s ease, background 0.3s ease;
+  z-index: 10;
+}
+
+.toggle input[type="checkbox"]:checked::before {
+  left: 20px; /* Перемещаем круг вправо при включении */
+  background: rgb(
+    1,
+    171,
+    1
+  ) !important; /* Зеленый цвет для включенного состояния */
+}
+
+.cartButton {
+  background-color: #6981b2;
+  box-shadow: 2px 3px 0px 0px #41557e;
+  width: 50px;
+  height: 50px;
+  border-radius: 12px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cartButton img {
+  width: 30px; /* Размер иконки */
+  height: 30px;
+  object-fit: contain;
+}
